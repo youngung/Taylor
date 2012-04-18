@@ -1,15 +1,27 @@
-## Architecture of my Talor
+## Architecture of my Taylor (1938)
 
-- Rate independent and dependent
-
-- Python's gorgeous interface should be made use of
-
-- Input arguments should be done using class
-
-- Should be done so on utput (simulation data) as well
+- Objectives:
+ Rate independent and dependent
+ Python's gorgeous interface should be made use of
+ Input arguments should be done using class
+ Should be done so on output (simulation data) as well
 
 
 - input: RVE, single crystal properties.
 - output: pole figure, stress - strain
 - others should be nothing more than scripts making use of the very fundamental frame.
 
+
+- input class:
+ RVE
+ single crystal properties (slip system, hardening and so on)
+  
+- output class:
+ Full tensorial Stress - strain
+ output RVE
+
+- Numerical modules (or definitions)
+ 1. Stress calculation
+ 2. Slip system's shear strain amount
+ 3. CRSS evolution
+ 4. Grain evolution
