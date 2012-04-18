@@ -1,0 +1,15 @@
+## Architecture of my Talor
+
+- Rate independent and dependent
+
+- Python's gorgeous interface should be made use of
+
+- Input arguments should be done using class
+
+- Should be done so on utput (simulation data) as well
+
+
+- input: RVE, single crystal properties.
+- output: pole figure, stress - strain
+- others should be nothing more than scripts making use of the very fundamental frame.
+
