@@ -24,12 +24,12 @@ c     $     gamma_dot            ! The resulting resolved shear strains on SS
       real*8 gamma_dot0, rss
       real*8 gamma_dot(nss)
 
-c     -- f2py block starts
-cf2py intent(out, copy) gamma_dot
-cf2py intent(hide), depend(crss) :: nss = shape(crss, 0)
-cf2py intent(hide), depend(stress_gr) :: nsd = shape(stress_gr, 0)
-cf2py intent(in) gamma_dot0, crss, schmid, stress_gr
-c     -- f2py block ends
+c$$$c     -- f2py block starts
+c$$$cf2py intent(out, copy) gamma_dot
+c$$$cf2py intent(hide), depend(crss) :: nss = shape(crss, 0)
+c$$$cf2py intent(hide), depend(stress_gr) :: nsd = shape(stress_gr, 0)
+c$$$cf2py intent(in) gamma_dot0, crss, schmid, stress_gr
+c$$$c     -- f2py block ends
       
       do iss=1, nss             ! slip system index
          rss = 0.
