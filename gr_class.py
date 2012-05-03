@@ -9,6 +9,7 @@ class Grain:
         hardeninglaw = 'Voce',
         ):
         """
+        Grain initiallization
         """
         import numpy as np
         self.current_euler = euler # euler angle
@@ -16,12 +17,16 @@ class Grain:
         self.current_acc_strain6 = np.zeros((3,3))
         self.current_stress6 = np.zeros((3,3))
         self.current_strain6_rate = np.zeros((3,3))
-        self.current_temperature = np.zeros((3,3))
+        self.current_temperature = 295. # Room temperature in K
         self.slipsystems = np.nan
 
         self.thermalcoeff = np.nan
         self.structure = structure
         self.crss = crss
+        self.euler_trajectory = []
+        self.euler_trajectory.append(euler)
+
+        self.initialization()
 
     def initialization(self):
         """
@@ -30,13 +35,18 @@ class Grain:
         self.__create_slipsystems__(self.structure)
 
     def __update_crss__(self):
-        pass
+        """ Slip system hardening law. (hardening)
+        """
+        for i in range(len(self.slipsystems)):
+            pass
 
     def __update_ori__(self):
-        pass
+        """ Lattice rotation law. (Texture evolution)
+        """
 
     def __create_slipsystems__(
-        self, structure='fcc', crss=1.0, iopp=False):
+        self, structure='fcc', crss=1.0, iopp=False
+        ):
         """
         """
         import numpy as np
@@ -74,3 +84,7 @@ class Grain:
 
             self.slipsystems = slipsystems
         else: raise IOError, 'not ready yet!'
+
+    def __rate_dependent_gamma__shear__(self):
+        """
+        """

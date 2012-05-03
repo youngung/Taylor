@@ -3,10 +3,15 @@ Libraries.
 
 1. def sort
    # Sorting out only unique array elements.
-2. def sort_ss
+2. isthisvectorin
+3. isthisvectornotin
+4. def sort_ss
    # Sorting out unique slip systems..
    # for the give set of slip normal and slip direction
+5. is_orthogonal(a,b)
+   # if the two vectors are mutually orthogonal
 """
+
 def sort(given, iopp=True):
     """
     Arguments:
@@ -74,7 +79,6 @@ def isthisvectornotin(a, b, iopptell=False):
               [1,1,1] =  [-1,-1,-1]
     """
     return not(isthisvectorin(a,b, iopptell))
-
 
 def sort_ss(sn, sb):
     """
